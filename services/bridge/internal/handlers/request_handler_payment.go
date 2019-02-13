@@ -3,21 +3,22 @@ package handlers
 import (
 	"encoding/hex"
 	"encoding/json"
-	log "github.com/sirupsen/logrus"
 	"io/ioutil"
 	"net/http"
 	"strconv"
 
-	"github.com/stellar/go/address"
-	b "github.com/stellar/go/build"
-	"github.com/stellar/go/clients/horizon"
-	"github.com/stellar/go/protocols/compliance"
-	"github.com/stellar/go/protocols/federation"
-	shared "github.com/stellar/go/services/internal/bridge-compliance-shared"
-	"github.com/stellar/go/services/internal/bridge-compliance-shared/http/helpers"
-	"github.com/stellar/go/services/internal/bridge-compliance-shared/protocols/bridge"
-	callback "github.com/stellar/go/services/internal/bridge-compliance-shared/protocols/compliance"
-	"github.com/stellar/go/xdr"
+	log "github.com/sirupsen/logrus"
+
+	"github.com/leevlad/go/address"
+	b "github.com/leevlad/go/build"
+	"github.com/leevlad/go/clients/horizon"
+	"github.com/leevlad/go/protocols/compliance"
+	"github.com/leevlad/go/protocols/federation"
+	shared "github.com/leevlad/go/services/internal/bridge-compliance-shared"
+	"github.com/leevlad/go/services/internal/bridge-compliance-shared/http/helpers"
+	"github.com/leevlad/go/services/internal/bridge-compliance-shared/protocols/bridge"
+	callback "github.com/leevlad/go/services/internal/bridge-compliance-shared/protocols/compliance"
+	"github.com/leevlad/go/xdr"
 )
 
 // Payment implements /payment endpoint

@@ -5,8 +5,8 @@ import (
 	"errors"
 	stdLog "log"
 
+	"github.com/leevlad/go/support/db"
 	migrate "github.com/rubenv/sql-migrate"
-	"github.com/stellar/go/support/db"
 )
 
 //go:generate go-bindata -ignore .+\.go$ -pkg schema -o bindata.go ./...

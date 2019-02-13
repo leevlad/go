@@ -12,7 +12,6 @@ import (
 	"os"
 
 	"github.com/spf13/cobra"
-	"github.com/stellar/go/tools/stellar-archivist/internal"
 )
 
 func status(a string, opts *Options) {

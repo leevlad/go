@@ -6,9 +6,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/rcrowley/go-metrics"
-	"github.com/stellar/go/services/horizon/internal/txsub/sequence"
-	"github.com/stellar/go/support/log"
+	"github.com/ethereum/go-ethereum/metrics"
+	"github.com/leevlad/go/services/horizon/internal/txsub/sequence"
+	"github.com/leevlad/go/support/log"
 )
 
 // System represents a completely configured transaction submission system.

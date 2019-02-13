@@ -3,9 +3,9 @@ package horizon
 import (
 	"fmt"
 
-	"github.com/stellar/go/services/horizon/internal/actions"
-	"github.com/stellar/go/services/horizon/internal/operationfeestats"
-	"github.com/stellar/go/support/render/hal"
+	"github.com/leevlad/go/services/horizon/internal/actions"
+	"github.com/leevlad/go/services/horizon/internal/operationfeestats"
+	"github.com/leevlad/go/support/render/hal"
 )
 
 // This file contains the actions:

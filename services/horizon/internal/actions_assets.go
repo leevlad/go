@@ -3,12 +3,12 @@ package horizon
 import (
 	"fmt"
 
-	"github.com/stellar/go/protocols/horizon"
-	"github.com/stellar/go/services/horizon/internal/actions"
-	"github.com/stellar/go/services/horizon/internal/db2"
-	"github.com/stellar/go/services/horizon/internal/db2/assets"
-	"github.com/stellar/go/services/horizon/internal/resourceadapter"
-	"github.com/stellar/go/support/render/hal"
+	"github.com/leevlad/go/protocols/horizon"
+	"github.com/leevlad/go/services/horizon/internal/actions"
+	"github.com/leevlad/go/services/horizon/internal/db2"
+	"github.com/leevlad/go/services/horizon/internal/db2/assets"
+	"github.com/leevlad/go/services/horizon/internal/resourceadapter"
+	"github.com/leevlad/go/support/render/hal"
 )
 
 // This file contains the actions:

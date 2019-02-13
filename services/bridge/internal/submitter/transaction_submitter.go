@@ -7,14 +7,14 @@ import (
 	"sync"
 	"time"
 
+	"github.com/leevlad/go/build"
+	"github.com/leevlad/go/clients/horizon"
+	"github.com/leevlad/go/keypair"
+	"github.com/leevlad/go/services/bridge/internal/db"
+	shared "github.com/leevlad/go/services/internal/bridge-compliance-shared"
+	"github.com/leevlad/go/support/errors"
+	"github.com/leevlad/go/xdr"
 	"github.com/sirupsen/logrus"
-	"github.com/stellar/go/build"
-	"github.com/stellar/go/clients/horizon"
-	"github.com/stellar/go/keypair"
-	"github.com/stellar/go/services/bridge/internal/db"
-	shared "github.com/stellar/go/services/internal/bridge-compliance-shared"
-	"github.com/stellar/go/support/errors"
-	"github.com/stellar/go/xdr"
 )
 
 // TransactionSubmitterInterface helps mocking TransactionSubmitter

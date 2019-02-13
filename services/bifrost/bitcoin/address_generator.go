@@ -3,8 +3,7 @@ package bitcoin
 import (
 	"github.com/btcsuite/btcd/chaincfg"
 	"github.com/btcsuite/btcutil"
-	"github.com/stellar/go/support/errors"
-	"github.com/tyler-smith/go-bip32"
+	"github.com/leevlad/go/support/errors"
 )
 
 func NewAddressGenerator(masterPublicKeyString string, chainParams *chaincfg.Params) (*AddressGenerator, error) {

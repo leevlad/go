@@ -3,8 +3,8 @@ package database
 import (
 	"time"
 
-	"github.com/stellar/go/support/db"
-	"github.com/stellar/go/support/errors"
+	"github.com/leevlad/go/support/db"
+	"github.com/leevlad/go/support/errors"
 )
 
 type Chain string

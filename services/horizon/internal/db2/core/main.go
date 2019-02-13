@@ -4,9 +4,9 @@ package core
 
 import (
 	"github.com/guregu/null"
-	"github.com/stellar/go/strkey"
-	"github.com/stellar/go/support/db"
-	"github.com/stellar/go/xdr"
+	"github.com/leevlad/go/strkey"
+	"github.com/leevlad/go/support/db"
+	"github.com/leevlad/go/xdr"
 )
 
 // Account is a row of data from the `accounts` table
@@ -190,7 +190,7 @@ func (q *Q) ElderLedger(dest *int32) error {
 		SELECT COALESCE(ledgerseq, 0)
 
 		FROM (
-			SELECT 
+			SELECT
 				ledgerseq,
 				LAG(ledgerseq, 1) OVER ( ORDER BY ledgerseq) as prev
 			FROM ledgerheaders

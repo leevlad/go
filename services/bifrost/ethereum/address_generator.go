@@ -3,9 +3,7 @@ package ethereum
 import (
 	ethereumCommon "github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/crypto"
-	"github.com/haltingstate/secp256k1-go"
-	"github.com/stellar/go/support/errors"
-	"github.com/tyler-smith/go-bip32"
+	"github.com/leevlad/go/support/errors"
 )
 
 func NewAddressGenerator(masterPublicKeyString string) (*AddressGenerator, error) {

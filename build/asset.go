@@ -1,8 +1,8 @@
 package build
 
 import (
-	"github.com/stellar/go/support/errors"
-	"github.com/stellar/go/xdr"
+	"github.com/leevlad/go/support/errors"
+	"github.com/leevlad/go/xdr"
 )
 
 // MustXDR is the panicky version of ToXDR

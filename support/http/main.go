@@ -11,11 +11,10 @@ import (
 	"os"
 	"time"
 
-	"github.com/stellar/go/support/config"
-	"github.com/stellar/go/support/errors"
-	"github.com/stellar/go/support/log"
+	"github.com/leevlad/go/support/config"
+	"github.com/leevlad/go/support/errors"
+	"github.com/leevlad/go/support/log"
 	"golang.org/x/net/http2"
-	"gopkg.in/tylerb/graceful.v1"
 )
 
 // DefaultListenAddr represents the default address and port on which a server

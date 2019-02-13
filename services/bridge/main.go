@@ -2,26 +2,27 @@ package main
 
 import (
 	"fmt"
-	log "github.com/sirupsen/logrus"
 	"net/http"
 	"os"
 	"runtime"
 	"time"
 
+	log "github.com/sirupsen/logrus"
+
 	"github.com/facebookgo/inject"
+	"github.com/leevlad/go/clients/federation"
+	"github.com/leevlad/go/clients/horizon"
+	"github.com/leevlad/go/clients/stellartoml"
+	"github.com/leevlad/go/services/bridge/internal/config"
+	"github.com/leevlad/go/services/bridge/internal/db"
+	"github.com/leevlad/go/services/bridge/internal/handlers"
+	"github.com/leevlad/go/services/bridge/internal/listener"
+	"github.com/leevlad/go/services/bridge/internal/submitter"
+	supportConfig "github.com/leevlad/go/support/config"
+	"github.com/leevlad/go/support/db/schema"
+	"github.com/leevlad/go/support/errors"
+	supportHttp "github.com/leevlad/go/support/http"
 	"github.com/spf13/cobra"
-	"github.com/stellar/go/clients/federation"
-	"github.com/stellar/go/clients/horizon"
-	"github.com/stellar/go/clients/stellartoml"
-	"github.com/stellar/go/services/bridge/internal/config"
-	"github.com/stellar/go/services/bridge/internal/db"
-	"github.com/stellar/go/services/bridge/internal/handlers"
-	"github.com/stellar/go/services/bridge/internal/listener"
-	"github.com/stellar/go/services/bridge/internal/submitter"
-	supportConfig "github.com/stellar/go/support/config"
-	"github.com/stellar/go/support/db/schema"
-	"github.com/stellar/go/support/errors"
-	supportHttp "github.com/stellar/go/support/http"
 )
 
 var app *App

@@ -1,11 +1,12 @@
 package txsub
 
 import (
-	"github.com/stretchr/testify/assert"
 	"net/http"
 	"testing"
 
-	"github.com/stellar/go/services/horizon/internal/test"
+	"github.com/stretchr/testify/assert"
+
+	"github.com/leevlad/go/services/horizon/internal/test"
 )
 
 func TestDefaultSubmitter(t *testing.T) {

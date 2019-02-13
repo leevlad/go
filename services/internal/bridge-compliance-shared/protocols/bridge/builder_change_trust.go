@@ -1,11 +1,11 @@
 package bridge
 
 import (
-	"github.com/stellar/go/amount"
-	b "github.com/stellar/go/build"
-	shared "github.com/stellar/go/services/internal/bridge-compliance-shared"
-	"github.com/stellar/go/services/internal/bridge-compliance-shared/http/helpers"
-	"github.com/stellar/go/services/internal/bridge-compliance-shared/protocols"
+	"github.com/leevlad/go/amount"
+	b "github.com/leevlad/go/build"
+	shared "github.com/leevlad/go/services/internal/bridge-compliance-shared"
+	"github.com/leevlad/go/services/internal/bridge-compliance-shared/http/helpers"
+	"github.com/leevlad/go/services/internal/bridge-compliance-shared/protocols"
 )
 
 // ChangeTrustOperationBody represents change_trust operation

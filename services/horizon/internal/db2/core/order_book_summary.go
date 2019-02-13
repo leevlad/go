@@ -6,7 +6,7 @@ import (
 	"text/template"
 
 	"github.com/go-errors/errors"
-	"github.com/stellar/go/xdr"
+	"github.com/leevlad/go/xdr"
 )
 
 type orderbookQueryBuilder struct {
@@ -160,7 +160,7 @@ FROM
 		co.price
 
 	ORDER BY co.price ASC
-	
+
 	LIMIT $1
 )) summary
 

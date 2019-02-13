@@ -24,7 +24,7 @@ In addition to the two prerequisites above, you may optionally install a redis s
 
 ## Installing
 
-To install Horizon, you have a choice: either downloading a [prebuilt release for your target architecture](https://github.com/stellar/go/releases) and operation system, or [building Horizon yourself](#Building).  When either approach is complete, you will find yourself with a directory containing a file named `horizon`.  This file is a native binary.
+To install Horizon, you have a choice: either downloading a [prebuilt release for your target architecture](https://github.com/leevlad/go/releases) and operation system, or [building Horizon yourself](#Building).  When either approach is complete, you will find yourself with a directory containing a file named `horizon`.  This file is a native binary.
 
 After building or unpacking Horizon, you simply need to copy the native binary into a directory that is part of your PATH.  Most unix-like systems have `/usr/local/bin` in PATH by default, so unless you have a preference or know better, we recommend you copy the binary there.
 
@@ -43,9 +43,9 @@ Should you decide not to use one of our prebuilt releases, you may instead build
 
 
 1. Set your [GOPATH](https://github.com/golang/go/wiki/GOPATH) environment variable, if you haven't already. The default `GOPATH` is `$HOME/go`.
-2. Clone the Stellar Go monorepo:  `go get github.com/stellar/go`. You should see the repository cloned at `$GOPATH/src/github.com/stellar/go`.
-3. Enter the source dir: `cd $GOPATH/src/github.com/stellar/go`, and download external dependencies: `dep ensure -v`. You should see the downloaded third party dependencies in `$GOPATH/pkg`.
-4. Compile the Horizon binary: `cd $GOPATH; go install github.com/stellar/go/services/horizon`. You should see the `horizon` binary in `$GOPATH/bin`.
+2. Clone the Stellar Go monorepo:  `go get github.com/leevlad/go`. You should see the repository cloned at `$GOPATH/src/github.com/leevlad/go`.
+3. Enter the source dir: `cd $GOPATH/src/github.com/leevlad/go`, and download external dependencies: `dep ensure -v`. You should see the downloaded third party dependencies in `$GOPATH/pkg`.
+4. Compile the Horizon binary: `cd $GOPATH; go install github.com/leevlad/go/services/horizon`. You should see the `horizon` binary in `$GOPATH/bin`.
 5. Add Go binaries to your PATH in your `bashrc` or equivalent, for easy access: `export PATH=${GOPATH//://bin:}/bin:$PATH`
 
 Open a new terminal. Confirm everything worked by running `horizon --help` successfully.
@@ -69,13 +69,13 @@ As you will see if you run the command above, Horizon defines a large number of 
 
 `--db-url` specifies the Horizon database, and its value should be a valid [PostgreSQL Connection URI](http://www.postgresql.org/docs/9.2/static/libpq-connect.html#AEN38419).  `--stellar-core-db-url` specifies a stellar-core database which will be used to load data about the stellar ledger.  Finally, `--stellar-core-url` specifies the HTTP control port for an instance of stellar-core.  This URL should be associated with the stellar-core that is writing to the database at `--stellar-core-db-url`.
 
-Specifying command line flags every time you invoke Horizon can be cumbersome, and so we recommend using environment variables.  There are many tools you can use to manage environment variables:  we recommend either [direnv](http://direnv.net/) or [dotenv](https://github.com/bkeepers/dotenv).  A template configuration that is compatible with dotenv can be found in the [Horizon git repo](https://github.com/stellar/go/blob/master/services/horizon/.env.template).
+Specifying command line flags every time you invoke Horizon can be cumbersome, and so we recommend using environment variables.  There are many tools you can use to manage environment variables:  we recommend either [direnv](http://direnv.net/) or [dotenv](https://github.com/bkeepers/dotenv).  A template configuration that is compatible with dotenv can be found in the [Horizon git repo](https://github.com/leevlad/go/blob/master/services/horizon/.env.template).
 
 
 
 ## Preparing the database
 
-Before the Horizon server can be run, we must first prepare the Horizon database.  This database will be used for all of the information produced by Horizon, notably historical information about successful transactions that have occurred on the stellar network.  
+Before the Horizon server can be run, we must first prepare the Horizon database.  This database will be used for all of the information produced by Horizon, notably historical information about successful transactions that have occurred on the stellar network.
 
 To prepare a database for Horizon's use, first you must ensure the database is blank.  It's easiest to simply create a new database on your postgres server specifically for Horizon's use.  Next you must install the schema by running `horizon db init`.  Remember to use the appropriate command line flags or environment variables to configure Horizon as explained in [Configuring ](#Configuring).  This command will log any errors that occur.
 
@@ -102,7 +102,7 @@ To enable ingestion, you must either pass `--ingest=true` on the command line or
 
 ### Ingesting historical data
 
-To enable ingestion of historical data from stellar-core you need to run `horizon db backfill NUM_LEDGERS`. If you're running a full validator with published history archive, for example, you might want to ingest all of history. In this case your `NUM_LEDGERS` should be slightly higher than the current ledger id on the network. You can run this process in the background while your Horizon server is up. This continuously decrements the `history.elder_ledger` in your /metrics endpoint until `NUM_LEDGERS` is reached and the backfill is complete. 
+To enable ingestion of historical data from stellar-core you need to run `horizon db backfill NUM_LEDGERS`. If you're running a full validator with published history archive, for example, you might want to ingest all of history. In this case your `NUM_LEDGERS` should be slightly higher than the current ledger id on the network. You can run this process in the background while your Horizon server is up. This continuously decrements the `history.elder_ledger` in your /metrics endpoint until `NUM_LEDGERS` is reached and the backfill is complete.
 
 ### Managing storage for historical data
 
@@ -126,7 +126,7 @@ We recommend you configure the HISTORY_RETENTION_COUNT in Horizon to a value les
 2.  run `horizon db reap` to clear the historical database.
 3.  Clear the cursor for Horizon by running `stellar-core -c "dropcursor?id=HORIZON"` (ensure capitilization is maintained).
 4.  Clear ledger metadata from before the gap by running `stellar-core -c "maintenance?queue=true"`.
-5.  Restart Horizon.    
+5.  Restart Horizon.
 
 ## Managing Stale Historical Data
 
@@ -136,7 +136,7 @@ To help applications that cannot tolerate lag, Horizon provides a configurable "
 
 ## Monitoring
 
-To ensure that your instance of Horizon is performing correctly we encourage you to monitor it, and provide both logs and metrics to do so.  
+To ensure that your instance of Horizon is performing correctly we encourage you to monitor it, and provide both logs and metrics to do so.
 
 Horizon will output logs to standard out.  Information about what requests are coming in will be reported, but more importantly, warnings or errors will also be emitted by default.  A correctly running Horizon instance will not output any warning or error log entries.
 

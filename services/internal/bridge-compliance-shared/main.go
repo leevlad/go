@@ -4,11 +4,11 @@ import (
 	"bytes"
 	"fmt"
 
-	"github.com/stellar/go/build"
-	"github.com/stellar/go/hash"
-	"github.com/stellar/go/keypair"
-	"github.com/stellar/go/support/errors"
-	"github.com/stellar/go/xdr"
+	"github.com/leevlad/go/build"
+	"github.com/leevlad/go/hash"
+	"github.com/leevlad/go/keypair"
+	"github.com/leevlad/go/support/errors"
+	"github.com/leevlad/go/xdr"
 )
 
 // BuildTransaction is used in compliance server. The sequence number in built transaction will be equal 0!

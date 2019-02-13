@@ -6,10 +6,10 @@ import (
 	"net/url"
 	"time"
 
+	"github.com/leevlad/go/support/errors"
+	"github.com/leevlad/go/support/strutils"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
-	"github.com/stellar/go/support/errors"
-	"github.com/stellar/go/support/strutils"
 )
 
 // ConfigOption is a complete description of the configuration of a command line option

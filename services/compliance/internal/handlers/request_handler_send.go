@@ -5,17 +5,17 @@ import (
 	"io/ioutil"
 	"net/http"
 
+	"github.com/leevlad/go/address"
+	b "github.com/leevlad/go/build"
+	"github.com/leevlad/go/clients/stellartoml"
+	"github.com/leevlad/go/protocols/compliance"
+	"github.com/leevlad/go/protocols/federation"
+	"github.com/leevlad/go/services/compliance/internal/db"
+	shared "github.com/leevlad/go/services/internal/bridge-compliance-shared"
+	"github.com/leevlad/go/services/internal/bridge-compliance-shared/http/helpers"
+	callback "github.com/leevlad/go/services/internal/bridge-compliance-shared/protocols/compliance"
+	"github.com/leevlad/go/xdr"
 	log "github.com/sirupsen/logrus"
-	"github.com/stellar/go/address"
-	b "github.com/stellar/go/build"
-	"github.com/stellar/go/clients/stellartoml"
-	"github.com/stellar/go/protocols/compliance"
-	"github.com/stellar/go/protocols/federation"
-	"github.com/stellar/go/services/compliance/internal/db"
-	shared "github.com/stellar/go/services/internal/bridge-compliance-shared"
-	"github.com/stellar/go/services/internal/bridge-compliance-shared/http/helpers"
-	callback "github.com/stellar/go/services/internal/bridge-compliance-shared/protocols/compliance"
-	"github.com/stellar/go/xdr"
 )
 
 // HandlerSend implements /send endpoint

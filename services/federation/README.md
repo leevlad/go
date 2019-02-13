@@ -5,7 +5,7 @@ Go implementation of [Federation](https://www.stellar.org/developers/learn/conce
 
 ## Downloading the server
 
-[Prebuilt binaries](https://github.com/stellar/go/releases) of the federation server are available on the [releases page](https://github.com/stellar/go/releases).
+[Prebuilt binaries](https://github.com/leevlad/go/releases) of the federation server are available on the [releases page](https://github.com/leevlad/go/releases).
 
 ## Config
 
@@ -18,7 +18,7 @@ By default this server uses a config file named `federation.cfg` in the current 
     * for `mysql`: `user:password@(host:port)/dbname` ([more info](https://github.com/go-sql-driver/mysql#dsn-data-source-name))
     * for `postgres`: `postgres://user:password@host/dbname?sslmode=sslmode` ([more info](https://godoc.org/github.com/lib/pq#hdr-Connection_String_Parameters))
 * `queries`
-  * `federation` - Implementation dependent query to fetch federation results, should return either 1 or 3 columns. These columns should be labeled `id`,`memo`,`memo_type`. Memo and memo_type are optional - see [Federation](https://www.stellar.org/developers/learn/concepts/federation.html) docs for more detail).  When executed, this query will be provided with two input parameters, the first will be the name portion of a stellar address and the second will be the domain portion of a stellar address.  For example, a request for `scott*stellar.org` would trigger a query with two input parameters, `scott` and `stellar.org` respectively. 
+  * `federation` - Implementation dependent query to fetch federation results, should return either 1 or 3 columns. These columns should be labeled `id`,`memo`,`memo_type`. Memo and memo_type are optional - see [Federation](https://www.stellar.org/developers/learn/concepts/federation.html) docs for more detail).  When executed, this query will be provided with two input parameters, the first will be the name portion of a stellar address and the second will be the domain portion of a stellar address.  For example, a request for `scott*stellar.org` would trigger a query with two input parameters, `scott` and `stellar.org` respectively.
   * `reverse-federation` - A SQL query to fetch reverse federation results that should return two columns, labeled `name` and `domain`.   When executed, this query will be provided with one input parameter, a [stellar account ID](https://www.stellar.org/developers/guides/concepts/accounts.html#account-id) used to lookup the name and domain mapping.
 
     If reverse-lookup isn't supported (e.g. you have a single Stellar account for all users), leave this entry out.
@@ -98,7 +98,7 @@ This service can built from source, provided you have installed the [go tools](h
 Given you have a running golang installation, you can build the server with:
 
 ```
-go get -u github.com/stellar/go/services/federation
+go get -u github.com/leevlad/go/services/federation
 ```
 
 After successful completion, you should find `bin/federation` is present in your configured GOPATH.

@@ -9,13 +9,13 @@ import (
 
 	"github.com/go-chi/chi"
 	chimiddleware "github.com/go-chi/chi/middleware"
+	"github.com/leevlad/go/services/horizon/internal/db2"
+	hProblem "github.com/leevlad/go/services/horizon/internal/render/problem"
+	"github.com/leevlad/go/services/horizon/internal/txsub/sequence"
+	"github.com/leevlad/go/support/render/problem"
 	metrics "github.com/rcrowley/go-metrics"
 	"github.com/rs/cors"
 	"github.com/sebest/xff"
-	"github.com/stellar/go/services/horizon/internal/db2"
-	hProblem "github.com/stellar/go/services/horizon/internal/render/problem"
-	"github.com/stellar/go/services/horizon/internal/txsub/sequence"
-	"github.com/stellar/go/support/render/problem"
 	"github.com/throttled/throttled"
 )
 

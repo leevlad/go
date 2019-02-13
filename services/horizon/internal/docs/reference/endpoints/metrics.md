@@ -2,7 +2,7 @@
 title: Metrics
 ---
 
-The metrics endpoint returns a host of useful data points for monitoring the health of the underlying Horizon process. 
+The metrics endpoint returns a host of useful data points for monitoring the health of the underlying Horizon process.
 
 ## Request
 
@@ -24,7 +24,7 @@ The `/metrics` endpoint returns a typical json response. Below, each section of 
 #### Links
 
 
-|  Attribute   | Endpoint                                                                                           | Description                                                
+|  Attribute   | Endpoint                                                                                           | Description
 |--------------|---------------------------------------------------------------------------------------------------|------------------------------------------------------------
 | self  | `/metrics`| Link to self. |
 
@@ -73,7 +73,7 @@ Horizon maintains its own database (postgres), a verbose and user friendly accou
 ```
 
 #### Ingester
-Ingester represents metrics specific to Horizon's [ingestion](https://github.com/stellar/go/blob/master/services/horizon/internal/docs/reference/admin.md#ingesting-stellar-core-data) process, or the process by which Horizon consumes transaction results from a connected Stellar Core instance.
+Ingester represents metrics specific to Horizon's [ingestion](https://github.com/leevlad/go/blob/master/services/horizon/internal/docs/reference/admin.md#ingesting-stellar-core-data) process, or the process by which Horizon consumes transaction results from a connected Stellar Core instance.
 
 |    Metric     |  Description                                                                                                                               |
 | ---------------- |  ------------------------------------------------------------------------------------------------------------------------------ |
@@ -234,13 +234,13 @@ As noted above, Horizon relies on Stellar Core to stay in sync with the Stellar 
 
 #### Transaction Submission
 
-Horizon does not submit transactions directly to the Stellar network. Instead, it sequences transactions and sends the base64 encoded, XDR serialized blob to its connected Stellar Core instance. 
+Horizon does not submit transactions directly to the Stellar network. Instead, it sequences transactions and sends the base64 encoded, XDR serialized blob to its connected Stellar Core instance.
 
 ##### Horizon Transaction Sequencing and Submission
 
-The following is a simplified version of the transaction submission process that glosses over the finer details. To dive deeper, check out the [source code](https://github.com/stellar/go/tree/master/services/horizon/internal/txsub).
+The following is a simplified version of the transaction submission process that glosses over the finer details. To dive deeper, check out the [source code](https://github.com/leevlad/go/tree/master/services/horizon/internal/txsub).
 
-Horizon's sequencing mechanism consists of a [manager](https://github.com/stellar/go/blob/master/services/horizon/internal/txsub/sequence/manager.go) that keeps track of [submission queues](https://github.com/stellar/go/blob/master/services/horizon/internal/txsub/sequence/queue.go) for a set of addresses. A submission queue is a  priority queue, prioritized by minimum transaction sequence number, that holds a set of pending transactions for an account. A pending transaction is represented as an object with a sequence number and a channel. Periodically, this queue is updated, popping off finished transactions, sending down the transaction's channel a successful/failure response.
+Horizon's sequencing mechanism consists of a [manager](https://github.com/leevlad/go/blob/master/services/horizon/internal/txsub/sequence/manager.go) that keeps track of [submission queues](https://github.com/leevlad/go/blob/master/services/horizon/internal/txsub/sequence/queue.go) for a set of addresses. A submission queue is a  priority queue, prioritized by minimum transaction sequence number, that holds a set of pending transactions for an account. A pending transaction is represented as an object with a sequence number and a channel. Periodically, this queue is updated, popping off finished transactions, sending down the transaction's channel a successful/failure response.
 
 These metrics contain useful [sub metrics](#sub-metrics).
 

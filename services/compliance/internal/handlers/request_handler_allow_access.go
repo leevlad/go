@@ -1,12 +1,13 @@
 package handlers
 
 import (
-	log "github.com/sirupsen/logrus"
 	"net/http"
 	"time"
 
-	"github.com/stellar/go/services/compliance/internal/db"
-	"github.com/stellar/go/services/internal/bridge-compliance-shared/http/helpers"
+	log "github.com/sirupsen/logrus"
+
+	"github.com/leevlad/go/services/compliance/internal/db"
+	"github.com/leevlad/go/services/internal/bridge-compliance-shared/http/helpers"
 )
 
 // HandlerAllowAccess implements /allow_access endpoint

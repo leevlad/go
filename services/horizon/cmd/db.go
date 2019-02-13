@@ -8,12 +8,12 @@ import (
 	"strconv"
 	"time"
 
+	"github.com/leevlad/go/services/horizon/internal/db2/schema"
+	"github.com/leevlad/go/services/horizon/internal/ingest"
+	"github.com/leevlad/go/support/db"
+	hlog "github.com/leevlad/go/support/log"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
-	"github.com/stellar/go/services/horizon/internal/db2/schema"
-	"github.com/stellar/go/services/horizon/internal/ingest"
-	"github.com/stellar/go/support/db"
-	hlog "github.com/stellar/go/support/log"
 )
 
 var dbCmd = &cobra.Command{

@@ -6,11 +6,11 @@ import (
 	"strings"
 	"time"
 
+	"github.com/leevlad/go/services/bifrost/queue"
+	"github.com/leevlad/go/services/bifrost/sse"
+	"github.com/leevlad/go/support/db"
+	"github.com/leevlad/go/support/errors"
 	"github.com/lib/pq"
-	"github.com/stellar/go/services/bifrost/queue"
-	"github.com/stellar/go/services/bifrost/sse"
-	"github.com/stellar/go/support/db"
-	"github.com/stellar/go/support/errors"
 )
 
 const (

@@ -2,11 +2,12 @@ package handlers
 
 import (
 	"encoding/json"
-	log "github.com/sirupsen/logrus"
 	"net/http"
 
-	"github.com/stellar/go/keypair"
-	"github.com/stellar/go/services/internal/bridge-compliance-shared/http/helpers"
+	log "github.com/sirupsen/logrus"
+
+	"github.com/leevlad/go/keypair"
+	"github.com/leevlad/go/services/internal/bridge-compliance-shared/http/helpers"
 )
 
 // KeyPair struct contains key pair public and private key

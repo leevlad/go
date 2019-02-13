@@ -3,9 +3,9 @@ package build
 import (
 	"strings"
 
+	"github.com/leevlad/go/xdr"
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
-	"github.com/stellar/go/xdr"
 )
 
 var _ = Describe("ClearData", func() {

@@ -6,9 +6,9 @@ import (
 	"net/http"
 	"sync"
 
+	"github.com/leevlad/go/support/log"
+	"github.com/leevlad/go/support/render/problem"
 	"github.com/pkg/errors"
-	"github.com/stellar/go/support/log"
-	"github.com/stellar/go/support/render/problem"
 )
 
 var (

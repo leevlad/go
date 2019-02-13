@@ -11,17 +11,17 @@ import (
 
 	"github.com/facebookgo/inject"
 	"github.com/goji/httpauth"
+	"github.com/leevlad/go/clients/federation"
+	"github.com/leevlad/go/clients/stellartoml"
+	"github.com/leevlad/go/services/compliance/internal/config"
+	"github.com/leevlad/go/services/compliance/internal/crypto"
+	"github.com/leevlad/go/services/compliance/internal/db"
+	"github.com/leevlad/go/services/compliance/internal/handlers"
+	supportConfig "github.com/leevlad/go/support/config"
+	"github.com/leevlad/go/support/db/schema"
+	"github.com/leevlad/go/support/errors"
+	supportHttp "github.com/leevlad/go/support/http"
 	"github.com/spf13/cobra"
-	"github.com/stellar/go/clients/federation"
-	"github.com/stellar/go/clients/stellartoml"
-	"github.com/stellar/go/services/compliance/internal/config"
-	"github.com/stellar/go/services/compliance/internal/crypto"
-	"github.com/stellar/go/services/compliance/internal/db"
-	"github.com/stellar/go/services/compliance/internal/handlers"
-	supportConfig "github.com/stellar/go/support/config"
-	"github.com/stellar/go/support/db/schema"
-	"github.com/stellar/go/support/errors"
-	supportHttp "github.com/stellar/go/support/http"
 )
 
 var app *App

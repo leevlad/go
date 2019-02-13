@@ -6,7 +6,7 @@ file.  This project adheres to [Semantic Versioning](http://semver.org/).
 As this project is pre 1.0, breaking changes may happen for minor version
 bumps.  A breaking change will get clearly notified in this log.
 
-NOTE:  this changelog represents the changes that are associated with the library code in this repo (rather than the tools or services in this repo).  
+NOTE:  this changelog represents the changes that are associated with the library code in this repo (rather than the tools or services in this repo).
 
 ## [Unreleased]
 
@@ -26,4 +26,4 @@ NOTE:  this changelog represents the changes that are associated with the librar
 - build: _BREAKING CHANGE_:  A transaction built and signed using the `build` package no longer default to the test network.
 - trades for offer endpoint will query for trades that match the given offer on either side of trades, rather than just the "sell" offer.
 
-[Unreleased]: https://github.com/stellar/go/commits/master
+[Unreleased]: https://github.com/leevlad/go/commits/master

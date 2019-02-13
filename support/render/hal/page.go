@@ -1,9 +1,10 @@
 package hal
 
 import (
-	sUrl "github.com/stellar/go/support/url"
 	"net/url"
 	"strconv"
+
+	sUrl "github.com/leevlad/go/support/url"
 )
 
 // BasePage represents the simplest page: one with no links and only embedded records.

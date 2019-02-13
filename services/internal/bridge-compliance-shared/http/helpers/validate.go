@@ -4,9 +4,9 @@ import (
 	"strings"
 
 	"github.com/asaskevich/govalidator"
-	"github.com/stellar/go/address"
-	"github.com/stellar/go/amount"
-	"github.com/stellar/go/strkey"
+	"github.com/leevlad/go/address"
+	"github.com/leevlad/go/amount"
+	"github.com/leevlad/go/strkey"
 )
 
 func init() {

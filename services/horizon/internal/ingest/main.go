@@ -7,11 +7,11 @@ import (
 	"sync"
 
 	sq "github.com/Masterminds/squirrel"
+	"github.com/leevlad/go/services/horizon/internal/db2/core"
+	"github.com/leevlad/go/support/db"
+	ilog "github.com/leevlad/go/support/log"
+	"github.com/leevlad/go/xdr"
 	metrics "github.com/rcrowley/go-metrics"
-	"github.com/stellar/go/services/horizon/internal/db2/core"
-	"github.com/stellar/go/support/db"
-	ilog "github.com/stellar/go/support/log"
-	"github.com/stellar/go/xdr"
 )
 
 var log = ilog.DefaultLogger.WithField("service", "ingest")

@@ -4,11 +4,11 @@ import (
 	"encoding/json"
 	"net/http"
 
+	b "github.com/leevlad/go/build"
+	"github.com/leevlad/go/clients/horizon"
+	"github.com/leevlad/go/services/internal/bridge-compliance-shared/http/helpers"
+	"github.com/leevlad/go/services/internal/bridge-compliance-shared/protocols/bridge"
 	log "github.com/sirupsen/logrus"
-	b "github.com/stellar/go/build"
-	"github.com/stellar/go/clients/horizon"
-	"github.com/stellar/go/services/internal/bridge-compliance-shared/http/helpers"
-	"github.com/stellar/go/services/internal/bridge-compliance-shared/protocols/bridge"
 )
 
 // Authorize implements /authorize endpoint

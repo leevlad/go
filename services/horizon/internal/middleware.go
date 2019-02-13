@@ -9,12 +9,12 @@ import (
 	"github.com/go-chi/chi"
 	"github.com/go-chi/chi/middleware"
 	chimiddleware "github.com/go-chi/chi/middleware"
-	"github.com/stellar/go/services/horizon/internal/errors"
-	"github.com/stellar/go/services/horizon/internal/httpx"
-	"github.com/stellar/go/services/horizon/internal/render"
-	"github.com/stellar/go/support/context/requestid"
-	"github.com/stellar/go/support/log"
-	"github.com/stellar/go/support/render/problem"
+	"github.com/leevlad/go/services/horizon/internal/errors"
+	"github.com/leevlad/go/services/horizon/internal/httpx"
+	"github.com/leevlad/go/services/horizon/internal/render"
+	"github.com/leevlad/go/support/context/requestid"
+	"github.com/leevlad/go/support/log"
+	"github.com/leevlad/go/support/render/problem"
 )
 
 // middleware adds the "app" context into every request, so that subsequence middleware

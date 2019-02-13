@@ -3,9 +3,8 @@ package commands
 import (
 	"strings"
 
+	"github.com/leevlad/go/support/errors"
 	"github.com/spf13/cobra"
-	"github.com/stellar/go/support/errors"
-	"github.com/tyler-smith/go-bip39"
 )
 
 const DefaultEntropySize = 256
